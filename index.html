@@ -1,0 +1,21 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>男丁格爾's 脫殼玩 - AngularJS</title>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.8/angular.min.js"></script>
+	<script src="js/controller.js"></script>
+</head>
+<body>
+	<div class="well span6" style="margin-top:20px;" ng-controller="control">
+		<label>Search:</label>
+		<input type="text" ng-model="search">
+		<hr>
+		<ul>
+			<!-- <li ng-repeat="friend in friends">[{{ $index + 1 }}]{{ friend }}</li> -->
+			<li ng-repeat="friend in friends | filter:search">{{ friend.name }}({{ friend.age }})</li>
+		</ul>
+	</div>
+</body>
+</html>
